@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://l7g65mi48b04"]
 
 [ext_resource type="Texture2D" uid="uid://dhuc62wto1f13" path="res://assets/sprites/icon.svg" id="1_dspkl"]
+[ext_resource type="Script" uid="uid://4lj6x2d1vm8x" path="res://src/scripts/movement.gd" id="2_1hfjj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_okxo0"]
 
@@ -11,3 +12,6 @@ shape = SubResource("RectangleShape2D_okxo0")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=976700661]
 texture = ExtResource("1_dspkl")
+
+[node name="Node" type="Node" parent="." unique_id=730506471]
+script = ExtResource("2_1hfjj")
