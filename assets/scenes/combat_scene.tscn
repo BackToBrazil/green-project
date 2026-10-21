@@ -1,11 +1,10 @@
 [gd_scene format=3 uid="uid://cwg4yu2bdw74f"]
 
 [ext_resource type="Texture2D" uid="uid://dhuc62wto1f13" path="res://assets/sprites/icon.svg" id="1_1fd6v"]
-[ext_resource type="Script" uid="uid://csbd5g7rnc2og" path="res://src/scripts/combat/CombatScene.gd" id="1_bkp7x"]
-[ext_resource type="Script" uid="uid://d1ibhdey2kkok" path="res://src/scripts/combat/CombatUI.gd" id="2_f2wxh"]
 
 [node name="CombatScene" type="Node2D" unique_id=607926246]
-script = ExtResource("1_bkp7x")
+
+[node name="TurnManager" type="Node" parent="." unique_id=1294556228]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1331171975]
 anchor_mode = 0
@@ -17,7 +16,6 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 1920.0
 offset_bottom = 1080.0
-script = ExtResource("2_f2wxh")
 
 [node name="Buttons" type="PanelContainer" parent="CombatLayer/UI" unique_id=358463772]
 layout_mode = 0
@@ -41,3 +39,27 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Flee"
 icon = ExtResource("1_1fd6v")
+
+[node name="TestLayer" type="CanvasLayer" parent="." unique_id=439308112]
+
+[node name="GridContainer" type="GridContainer" parent="TestLayer" unique_id=470319876]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -28.0
+offset_top = -33.0
+offset_right = 28.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="StartButton" type="Button" parent="TestLayer/GridContainer" unique_id=1994956146]
+layout_mode = 2
+text = "START"
+
+[node name="EndButton" type="Button" parent="TestLayer/GridContainer" unique_id=476699443]
+layout_mode = 2
+text = "END"
