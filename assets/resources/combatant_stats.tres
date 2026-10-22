@@ -1,3 +1,6 @@
-[gd_resource type="Resource" format=3 uid="uid://dybmgrc17b25b"]
+[gd_resource type="Resource" script_class="CombatantStats" format=3 uid="uid://dybmgrc17b25b"]
+
+[ext_resource type="Script" uid="uid://b00mb6je8fmb3" path="res://src/scripts/combat_system/combatant/CombatantStats.gd" id="1_w8apn"]
 
 [resource]
+script = ExtResource("1_w8apn")

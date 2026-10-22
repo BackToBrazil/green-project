@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://3q7x2fm3ddmq"]
+
+[ext_resource type="Script" uid="uid://iajg3syy6ugr" path="res://src/scripts/combat_system/combatant/Opponent.gd" id="1_sxx4k"]
+[ext_resource type="Script" uid="uid://b00mb6je8fmb3" path="res://src/scripts/combat_system/combatant/CombatantStats.gd" id="2_3wooc"]
+
+[sub_resource type="Resource" id="Resource_sxx4k"]
+script = ExtResource("2_3wooc")
+name = &"Opponent"
+max_health = 2.0
+damage = 1.0
+metadata/_custom_type_script = "uid://b00mb6je8fmb3"
+
+[node name="Opponent" type="Node" unique_id=782885381]
+script = ExtResource("1_sxx4k")
+stats = SubResource("Resource_sxx4k")
+metadata/_custom_type_script = "uid://iajg3syy6ugr"

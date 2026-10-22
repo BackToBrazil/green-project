@@ -1,1 +1,1 @@
-extends Control
+class_name CombatUI extends Control
