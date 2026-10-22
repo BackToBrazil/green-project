@@ -1,1 +1,1 @@
-extends RefCounted
+class_name Combatant extends Node2D

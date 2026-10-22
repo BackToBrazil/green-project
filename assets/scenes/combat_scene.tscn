@@ -1,65 +1,23 @@
 [gd_scene format=3 uid="uid://cwg4yu2bdw74f"]
 
-[ext_resource type="Texture2D" uid="uid://dhuc62wto1f13" path="res://assets/sprites/icon.svg" id="1_1fd6v"]
+[ext_resource type="Script" uid="uid://corb2cexxlw6e" path="res://src/scripts/combat_system/combatant/Combatant.gd" id="1_1fd6v"]
+[ext_resource type="Script" uid="uid://ckk2mfmnd12ff" path="res://src/scripts/combat_system/TurnManager.gd" id="1_bkp7x"]
+[ext_resource type="Script" uid="uid://b2bi0awn33yl7" path="res://src/scripts/combat_system/CombatController.gd" id="1_f2wxh"]
 
 [node name="CombatScene" type="Node2D" unique_id=607926246]
+script = ExtResource("1_f2wxh")
 
-[node name="TurnManager" type="Node" parent="." unique_id=1294556228]
+[node name="TurnManager" type="Node" parent="." unique_id=1294556228 node_paths=PackedStringArray("combatants_list")]
+script = ExtResource("1_bkp7x")
+combatants_list = NodePath("../Combatants_list")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1331171975]
 anchor_mode = 0
 
-[node name="CombatLayer" type="CanvasLayer" parent="." unique_id=1032087130]
+[node name="Combatants_list" type="Node2D" parent="." unique_id=763775451]
 
-[node name="UI" type="Control" parent="CombatLayer" unique_id=1610090460]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 1920.0
-offset_bottom = 1080.0
+[node name="Combatant_One" type="Node2D" parent="Combatants_list" unique_id=569147084]
+script = ExtResource("1_1fd6v")
 
-[node name="Buttons" type="PanelContainer" parent="CombatLayer/UI" unique_id=358463772]
-layout_mode = 0
-offset_left = 660.0
-offset_top = 780.0
-offset_right = 1260.0
-offset_bottom = 1080.0
-
-[node name="GridContainer" type="GridContainer" parent="CombatLayer/UI/Buttons" unique_id=114768703]
-layout_mode = 2
-columns = 2
-
-[node name="Attack" type="Button" parent="CombatLayer/UI/Buttons/GridContainer" unique_id=677274253]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Attack"
-icon = ExtResource("1_1fd6v")
-
-[node name="Flee" type="Button" parent="CombatLayer/UI/Buttons/GridContainer" unique_id=559731296]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Flee"
-icon = ExtResource("1_1fd6v")
-
-[node name="TestLayer" type="CanvasLayer" parent="." unique_id=439308112]
-
-[node name="GridContainer" type="GridContainer" parent="TestLayer" unique_id=470319876]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -28.0
-offset_top = -33.0
-offset_right = 28.0
-offset_bottom = 33.0
-grow_horizontal = 2
-grow_vertical = 2
-columns = 2
-
-[node name="StartButton" type="Button" parent="TestLayer/GridContainer" unique_id=1994956146]
-layout_mode = 2
-text = "START"
-
-[node name="EndButton" type="Button" parent="TestLayer/GridContainer" unique_id=476699443]
-layout_mode = 2
-text = "END"
+[node name="Combatant_Two" type="Node2D" parent="Combatants_list" unique_id=129449181]
+script = ExtResource("1_1fd6v")

@@ -1,1 +1,40 @@
-extends Node
+class_name TurnManager extends Node
+
+@export var combatants_list: Node
+var queue: Array[Node] = []
+var current_combatant: Node = null
+var turn_count: int = 1
+
+var get_queue_append_text: String = "appended combatant %s to the queue."
+var get_queue_queue_size_text: String = "current queue size: %s. setting %s as the current_combatant."
+var play_turn_text: String = "current_combatant '%s' took turn and attacked."
+var pass_turn_back_queue_text: String = "passing turn... %s moved to the back of the queue."
+var pass_turn_new_current_combatant_text: String = "turn is with %s now, waiting action."
+
+func initialize() -> void:
+	get_queue()
+	play_turn()
+
+func get_queue() -> void:
+	queue.clear()
+	var nodes: Array[Node] = combatants_list.get_children()
+	for node: Combatant in nodes:
+		queue.append(node)
+		print(get_queue_append_text % node.name)
+	if queue.size() > 0:
+		current_combatant = queue[0]
+		print(get_queue_queue_size_text % [queue.size(), current_combatant])
+
+func play_turn() -> void:
+	if turn_count <= 2:
+		print(play_turn_text % current_combatant)
+		pass_turn()
+		turn_count += 1
+		play_turn()
+
+func pass_turn() -> void:
+	var old_combatant: Node = queue.pop_front()
+	queue.append(old_combatant)
+	print(pass_turn_back_queue_text % old_combatant)
+	current_combatant = queue[0]
+	print(pass_turn_new_current_combatant_text % current_combatant)
