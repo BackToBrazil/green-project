@@ -7,7 +7,7 @@ var attack_text: String = "%s attacked %s dealing %s amount of damage."
 
 func _ready() -> void:
 	add_child(_timer)
-	_timer.wait_time = 3
+	_timer.wait_time = 0.25
 
 func start_turn() -> void:
 	_timer.start()
