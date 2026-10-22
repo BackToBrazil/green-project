@@ -24,3 +24,36 @@ target = NodePath("../Combatant_Two")
 [node name="Combatant_Two" type="Node2D" parent="Combatants_list" unique_id=129449181 node_paths=PackedStringArray("target")]
 script = ExtResource("1_1fd6v")
 target = NodePath("../Combatant_One")
+
+[node name="UI" type="Control" parent="." unique_id=2140428192]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+
+[node name="PanelContainer" type="PanelContainer" parent="UI" unique_id=1588103668]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -300.0
+offset_top = -31.0
+offset_right = 300.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="GridContainer" type="GridContainer" parent="UI/PanelContainer" unique_id=1453807577]
+layout_mode = 2
+columns = 2
+
+[node name="Attack" type="Button" parent="UI/PanelContainer/GridContainer" unique_id=953116356]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "ATTACK"
+
+[node name="Flee" type="Button" parent="UI/PanelContainer/GridContainer" unique_id=1155164085]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "FLEE"
