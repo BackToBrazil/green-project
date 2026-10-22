@@ -4,8 +4,9 @@
 [ext_resource type="Script" uid="uid://ckk2mfmnd12ff" path="res://src/scripts/combat_system/TurnManager.gd" id="1_bkp7x"]
 [ext_resource type="Script" uid="uid://b2bi0awn33yl7" path="res://src/scripts/combat_system/CombatController.gd" id="1_f2wxh"]
 
-[node name="CombatScene" type="Node2D" unique_id=607926246]
+[node name="CombatScene" type="Node2D" unique_id=607926246 node_paths=PackedStringArray("combatants_list")]
 script = ExtResource("1_f2wxh")
+combatants_list = NodePath("Combatants_list")
 
 [node name="TurnManager" type="Node" parent="." unique_id=1294556228 node_paths=PackedStringArray("combatants_list")]
 script = ExtResource("1_bkp7x")

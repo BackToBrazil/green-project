@@ -11,7 +11,11 @@ var play_turn_text: String = "current_combatant '%s' took turn and attacked."
 var pass_turn_back_queue_text: String = "passing turn... %s moved to the back of the queue."
 var pass_turn_new_current_combatant_text: String = "turn is with %s now, waiting action."
 
+var _is_combat_finished: bool = false: set = _on_combat_finished
+
 func initialize() -> void:
+	var combat_scene: CombatController = $".."
+	combat_scene.combat_finished.connect(_on_combat_finished)
 	get_queue()
 	play_turn()
 
@@ -20,17 +24,17 @@ func get_queue() -> void:
 	var nodes: Array[Node] = combatants_list.get_children()
 	for node: Combatant in nodes:
 		queue.append(node)
-		print(get_queue_append_text % node.name)
+		#print(get_queue_append_text % node.name)
 	if queue.size() > 0:
 		current_combatant = queue[0]
-		print(get_queue_queue_size_text % [queue.size(), current_combatant])
+		#print(get_queue_queue_size_text % [queue.size(), current_combatant])
 	print("\n")
 
 func play_turn() -> void:
-	if turn_count <= 2:
-		await current_combatant.turn_finished
+	await current_combatant.turn_finished
+	if not _is_combat_finished:
 		pass_turn()
-		turn_count += 1
+		#turn_count += 1
 		print ("\n")
 		play_turn()
 
@@ -45,3 +49,6 @@ func pass_turn() -> void:
 func _set_current(new_combatant: Combatant) -> void:
 	current_combatant = new_combatant
 	current_combatant.take_turn()
+
+func _on_combat_finished(b: bool) -> void:
+	_is_combat_finished = b

@@ -2,8 +2,9 @@ class_name Combatant extends Node2D
 @export var damage: float = 1
 @export var health: float = 3
 @export var target: Combatant
-signal turn_finished
 @onready var _timer: Timer = Timer.new()
+signal turn_finished
+signal died(dead: Combatant)
 
 var attack_text: String = "%s is attacking %s dealing %s damage."
 var take_damage_text: String = "%s is taking %s amount of damage. 
@@ -26,3 +27,5 @@ func attack() -> void:
 func take_damage(amount_of_damage: float) -> void:
 	health -= amount_of_damage
 	print(take_damage_text % [name, amount_of_damage, health])
+	if(health <= 0):
+		died.emit()
