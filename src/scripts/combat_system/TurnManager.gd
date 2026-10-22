@@ -2,7 +2,7 @@ class_name TurnManager extends Node
 
 @export var combatants_list: Node
 var queue: Array[Node] = []
-var current_combatant: Node = null
+var current_combatant: Combatant = null: set = _set_current
 var turn_count: int = 1
 
 var get_queue_append_text: String = "appended combatant %s to the queue."
@@ -24,17 +24,24 @@ func get_queue() -> void:
 	if queue.size() > 0:
 		current_combatant = queue[0]
 		print(get_queue_queue_size_text % [queue.size(), current_combatant])
+	print("\n")
 
 func play_turn() -> void:
 	if turn_count <= 2:
-		print(play_turn_text % current_combatant)
+		await current_combatant.turn_finished
 		pass_turn()
 		turn_count += 1
+		print ("\n")
 		play_turn()
 
 func pass_turn() -> void:
 	var old_combatant: Node = queue.pop_front()
 	queue.append(old_combatant)
-	print(pass_turn_back_queue_text % old_combatant)
+	#print(pass_turn_back_queue_text % old_combatant)
 	current_combatant = queue[0]
-	print(pass_turn_new_current_combatant_text % current_combatant)
+	#print(pass_turn_new_current_combatant_text % current_combatant)
+	print("\n")
+
+func _set_current(new_combatant: Combatant) -> void:
+	current_combatant = new_combatant
+	current_combatant.take_turn()

@@ -16,8 +16,10 @@ anchor_mode = 0
 
 [node name="Combatants_list" type="Node2D" parent="." unique_id=763775451]
 
-[node name="Combatant_One" type="Node2D" parent="Combatants_list" unique_id=569147084]
+[node name="Combatant_One" type="Node2D" parent="Combatants_list" unique_id=569147084 node_paths=PackedStringArray("target")]
 script = ExtResource("1_1fd6v")
+target = NodePath("../Combatant_Two")
 
-[node name="Combatant_Two" type="Node2D" parent="Combatants_list" unique_id=129449181]
+[node name="Combatant_Two" type="Node2D" parent="Combatants_list" unique_id=129449181 node_paths=PackedStringArray("target")]
 script = ExtResource("1_1fd6v")
+target = NodePath("../Combatant_One")
