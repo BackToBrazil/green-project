@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://c3jv2cudmrdop"]
+
+[ext_resource type="PackedScene" uid="uid://0j6n15a4j4cw" path="res://assets/scenes/player.tscn" id="1_slo4m"]
+
+[node name="MainScene" type="Node" unique_id=268292685]
+
+[node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
+position = Vector2(510, 225)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575569168]
+
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

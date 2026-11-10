@@ -38,10 +38,6 @@ folder_colors={
 "res://src/scripts/battle_system/": "teal"
 }
 
-[gui]
-
-theme/custom="res://addons/ps1_rpg_menu/themes/night.tres"
-
 [input]
 
 left={

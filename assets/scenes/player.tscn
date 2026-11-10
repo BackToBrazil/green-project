@@ -2,6 +2,8 @@
 
 [ext_resource type="Texture2D" uid="uid://dogy5d00aiipp" path="res://assets/resources/sprites/player/Male_I.png" id="1_s027a"]
 [ext_resource type="Texture2D" uid="uid://rh42nb24yxi8" path="res://assets/resources/sprites/player/Male_W.png" id="2_14505"]
+[ext_resource type="Script" uid="uid://di88w14gwmvrs" path="res://src/scripts/characters/player/Controller.cs" id="3_14505"]
+[ext_resource type="Resource" uid="uid://sf6vjkwpaikx" path="res://assets/resources/characters/status/player_status.tres" id="4_4wcc8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4wcc8"]
 atlas = ExtResource("1_s027a")
@@ -731,4 +733,8 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=613733516]
 shape = SubResource("CapsuleShape2D_s027a")
 
-[node name="Controller" type="Node" parent="." unique_id=1008893791]
+[node name="Controller" type="Node" parent="." unique_id=1008893791 node_paths=PackedStringArray("_characterBody", "_animatedSprite")]
+script = ExtResource("3_14505")
+Status = ExtResource("4_4wcc8")
+_characterBody = NodePath("..")
+_animatedSprite = NodePath("../AnimatedSprite2D")

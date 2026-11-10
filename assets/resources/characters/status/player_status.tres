@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Status" format=3 uid="uid://sf6vjkwpaikx"]
+
+[ext_resource type="Script" uid="uid://bgdr2srp4eght" path="res://src/scripts/characters/player/Status.cs" id="1_nkb2r"]
+
+[resource]
+script = ExtResource("1_nkb2r")
+MaxSpeed = 300.0
+Acceleration = 1200.0
+Brake = 1600.0
