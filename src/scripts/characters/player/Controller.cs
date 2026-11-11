@@ -1,5 +1,8 @@
 using Godot;
+using Godot.Collections;
+using GreenProject.Characters.Player;
 using System;
+using System.Linq;
 namespace GreenProject.Characters;
 
 
@@ -18,6 +21,8 @@ public partial class Controller : Node
     private CharacterBody2D _characterBody;
     [Export]
     private AnimatedSprite2D _animatedSprite;
+    [Export]
+    private InteractionBox _interactionBox;
 
     
     private Vector2 _direction = Vector2.Zero;
@@ -64,7 +69,11 @@ public partial class Controller : Node
 
     public override void _UnhandledKeyInput(InputEvent @event)
     {
-        
+        if (@event.IsActionPressed("interact"))
+        {
+            Array<Area2D> areas = _interactionBox.GetOverlappingAreas();
+            
+        }
     }
 
     private Vector2 HandleDirection()
