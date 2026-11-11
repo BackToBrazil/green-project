@@ -724,6 +724,8 @@ animations = [{
 radius = 13.0
 height = 62.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_rphhr"]
+
 [node name="Player" type="CharacterBody2D" unique_id=1810374751]
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1415390553]
@@ -733,10 +735,17 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=613733516]
 shape = SubResource("CapsuleShape2D_s027a")
 
+[node name="Camera2D" type="Camera2D" parent="." unique_id=896520776]
+
+[node name="Interaction Box" type="Area2D" parent="." unique_id=593553779]
+position = Vector2(0, 42)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Box" unique_id=28742144]
+shape = SubResource("CircleShape2D_rphhr")
+debug_color = Color(1.6364455e-06, 0.64323026, 0.30936426, 0.41960785)
+
 [node name="Controller" type="Node" parent="." unique_id=1008893791 node_paths=PackedStringArray("_characterBody", "_animatedSprite")]
 script = ExtResource("3_14505")
 Status = ExtResource("4_4wcc8")
 _characterBody = NodePath("..")
 _animatedSprite = NodePath("../AnimatedSprite2D")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=896520776]

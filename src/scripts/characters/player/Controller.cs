@@ -26,11 +26,6 @@ public partial class Controller : Node
     private Vector2 _currentVelocity = Vector2.Zero;
     private MovementState _movementState = MovementState.IDLE;
 
-    public override void _Ready()
-    {
-        GD.Print(string.Format("MaxSpeed: {0}\nAcceleration: {1}\nBrake: {2}", Status.MaxSpeed, Status.Acceleration, Status.Brake));
-    }
-
     public override void _Process(double delta)
     {
         Vector2 direction = _lastDirection;
@@ -108,6 +103,5 @@ public partial class Controller : Node
             dir = "_down";
 
         _animatedSprite.Play(animation+dir);
-        GD.Print("Playing: " + animation + dir);
     }
 }
