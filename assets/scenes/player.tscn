@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://dogy5d00aiipp" path="res://assets/resources/sprites/player/Male_I.png" id="1_s027a"]
 [ext_resource type="Texture2D" uid="uid://rh42nb24yxi8" path="res://assets/resources/sprites/player/Male_W.png" id="2_14505"]
+[ext_resource type="Script" uid="uid://chri0ynfj53h" path="res://src/scripts/characters/player/InteractionBox.cs" id="3_8sknh"]
 [ext_resource type="Script" uid="uid://di88w14gwmvrs" path="res://src/scripts/characters/player/Controller.cs" id="3_14505"]
 [ext_resource type="Resource" uid="uid://sf6vjkwpaikx" path="res://assets/resources/characters/status/player_status.tres" id="4_4wcc8"]
 
@@ -725,6 +726,7 @@ radius = 13.0
 height = 62.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rphhr"]
+radius = 21.095022
 
 [node name="Player" type="CharacterBody2D" unique_id=1810374751]
 
@@ -737,8 +739,13 @@ shape = SubResource("CapsuleShape2D_s027a")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=896520776]
 
-[node name="Interaction Box" type="Area2D" parent="." unique_id=593553779]
+[node name="Interaction Box" type="Area2D" parent="." unique_id=593553779 node_paths=PackedStringArray("_characterBody")]
 position = Vector2(0, 42)
+collision_layer = 0
+collision_mask = 2
+monitorable = false
+script = ExtResource("3_8sknh")
+_characterBody = NodePath("..")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Box" unique_id=28742144]
 shape = SubResource("CircleShape2D_rphhr")
