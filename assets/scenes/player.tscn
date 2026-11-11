@@ -722,7 +722,7 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_s027a"]
 radius = 13.0
-height = 72.0
+height = 62.0
 
 [node name="Player" type="CharacterBody2D" unique_id=1810374751]
 
@@ -738,3 +738,5 @@ script = ExtResource("3_14505")
 Status = ExtResource("4_4wcc8")
 _characterBody = NodePath("..")
 _animatedSprite = NodePath("../AnimatedSprite2D")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=896520776]
