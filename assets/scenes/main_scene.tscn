@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://8ejhhqgxdlek" path="res://assets/resources/tilesets/TS_Dirt.png" id="1_6sgls"]
 [ext_resource type="PackedScene" uid="uid://bah0vldjb786p" path="res://assets/scenes/tree.tscn" id="1_gagv8"]
 [ext_resource type="PackedScene" uid="uid://0j6n15a4j4cw" path="res://assets/scenes/player.tscn" id="1_slo4m"]
+[ext_resource type="PackedScene" uid="uid://c7kk3aqmfbmxu" path="res://assets/scenes/sign.tscn" id="3_u44wh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gagv8"]
 texture = ExtResource("1_6sgls")
@@ -53,6 +54,9 @@ position = Vector2(335, 405)
 
 [node name="Tree5" parent="GameLevel/Trees" unique_id=1970317845 instance=ExtResource("1_gagv8")]
 position = Vector2(858, 578)
+
+[node name="Sign" parent="GameLevel" unique_id=300503589 instance=ExtResource("3_u44wh")]
+position = Vector2(474, 394)
 
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)
