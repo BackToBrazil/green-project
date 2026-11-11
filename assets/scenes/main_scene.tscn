@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://bah0vldjb786p" path="res://assets/scenes/tree.tscn" id="1_gagv8"]
 [ext_resource type="PackedScene" uid="uid://0j6n15a4j4cw" path="res://assets/scenes/player.tscn" id="1_slo4m"]
 [ext_resource type="PackedScene" uid="uid://c7kk3aqmfbmxu" path="res://assets/scenes/sign.tscn" id="3_u44wh"]
+[ext_resource type="Script" uid="uid://bovcaf6jpj5ci" path="res://addons/ps1_rpg_menu/menu/rpg_window.gd" id="5_eqalh"]
+[ext_resource type="Theme" path="res://addons/ps1_rpg_menu/themes/night.tres" id="5_vo808"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gagv8"]
 texture = ExtResource("1_6sgls")
@@ -66,5 +68,21 @@ position = Vector2(510, 225)
 [node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 640.0
+offset_bottom = 360.0
+theme = ExtResource("5_vo808")
+
+[node name="Pop up Window" type="PanelContainer" parent="CanvasLayer/UI" unique_id=683902120]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_eqalh")

@@ -1,0 +1,17 @@
+[remap]
+
+importer="font_data_bmfont"
+type="FontFile"
+uid="uid://bftt3y814bhhq"
+path="res://.godot/imported/ps1_rpg_menu_digits_2x.fnt-0d56368a3fb06814eb55a70097f4fed3.fontdata"
+
+[deps]
+
+source_file="res://addons/ps1_rpg_menu/font/ps1_rpg_menu_digits_2x.fnt"
+dest_files=["res://.godot/imported/ps1_rpg_menu_digits_2x.fnt-0d56368a3fb06814eb55a70097f4fed3.fontdata"]
+
+[params]
+
+fallbacks=[]
+compress=true
+scaling_mode=2
