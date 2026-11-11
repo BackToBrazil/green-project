@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://0j6n15a4j4cw" path="res://assets/scenes/player.tscn" id="1_slo4m"]
 [ext_resource type="PackedScene" uid="uid://c7kk3aqmfbmxu" path="res://assets/scenes/sign.tscn" id="3_u44wh"]
 [ext_resource type="Theme" uid="uid://bt86sk4o28lff" path="res://addons/ps1_rpg_menu/themes/night.tres" id="5_vo808"]
+[ext_resource type="Script" uid="uid://csoflkfolg1r7" path="res://src/scripts/ui/UserInterface.cs" id="6_4v045"]
 [ext_resource type="Script" uid="uid://buadrc8oinyjx" path="res://addons/ps1_rpg_menu/menu/dialogue_box.gd" id="7_4v045"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gagv8"]
@@ -66,7 +67,7 @@ position = Vector2(510, 225)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575569168]
 
-[node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623]
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623 node_paths=PackedStringArray("DialogBox")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -74,6 +75,8 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_vo808")
+script = ExtResource("6_4v045")
+DialogBox = NodePath("DialogBox")
 
 [node name="DialogBox" type="PanelContainer" parent="CanvasLayer/UI" unique_id=683902120]
 visible = false

@@ -739,20 +739,23 @@ shape = SubResource("CapsuleShape2D_s027a")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=896520776]
 
-[node name="Interaction Box" type="Area2D" parent="." unique_id=593553779 node_paths=PackedStringArray("_characterBody")]
+[node name="Interaction Box" type="Area2D" parent="." unique_id=593553779 node_paths=PackedStringArray("_characterBody", "_collisionShape")]
 position = Vector2(0, 42)
-collision_layer = 0
-collision_mask = 2
-monitorable = false
+collision_layer = 2
+collision_mask = 0
+monitoring = false
 script = ExtResource("3_8sknh")
 _characterBody = NodePath("..")
+_collisionShape = NodePath("CollisionShape2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Box" unique_id=28742144]
 shape = SubResource("CircleShape2D_rphhr")
+disabled = true
 debug_color = Color(1.6364455e-06, 0.64323026, 0.30936426, 0.41960785)
 
-[node name="Controller" type="Node" parent="." unique_id=1008893791 node_paths=PackedStringArray("_characterBody", "_animatedSprite")]
+[node name="Controller" type="Node" parent="." unique_id=1008893791 node_paths=PackedStringArray("_characterBody", "_animatedSprite", "_interactionBox")]
 script = ExtResource("3_14505")
 Status = ExtResource("4_4wcc8")
 _characterBody = NodePath("..")
 _animatedSprite = NodePath("../AnimatedSprite2D")
+_interactionBox = NodePath("../Interaction Box")

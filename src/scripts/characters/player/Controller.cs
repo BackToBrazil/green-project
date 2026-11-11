@@ -31,6 +31,14 @@ public partial class Controller : Node
     private Vector2 _currentVelocity = Vector2.Zero;
     private MovementState _movementState = MovementState.IDLE;
 
+    private bool _isDialogOpen = false;
+
+    public override void _Ready()
+    {
+        EventsManager.Instance.InteractionStarted += (origin) => { _isDialogOpen = true; };
+        EventsManager.Instance.InteractionFinished += (origin) => { _isDialogOpen = false; };
+    }
+
     public override void _Process(double delta)
     {
         Vector2 direction = _lastDirection;
@@ -69,15 +77,19 @@ public partial class Controller : Node
 
     public override void _UnhandledKeyInput(InputEvent @event)
     {
+        if (_isDialogOpen)
+            return;
         if (@event.IsActionPressed("interact"))
         {
-            Array<Area2D> areas = _interactionBox.GetOverlappingAreas();
-            
+            //GD.Print("INTERACT");
+            _interactionBox.TryInteract();
         }
     }
 
     private Vector2 HandleDirection()
     {
+        if (_isDialogOpen)
+            return Vector2.Zero;
         Vector2 new_direction = Input.GetVector("left", "right", "up", "down");
         if (new_direction.X != 0 && new_direction.Y != 0)
         {
