@@ -1079,6 +1079,7 @@ Distance = 13.0
 rotation = -0.0069192615
 scale = Vector2(0.4, 0.4)
 shape = SubResource("CircleShape2D_rphhr")
+disabled = true
 debug_color = Color(1.6364455e-06, 0.64323026, 0.30936426, 0.41960785)
 
 [node name="Controller" type="Node" parent="." unique_id=1008893791 node_paths=PackedStringArray("_characterBody", "_animatedSprite", "_interactionBox")]
