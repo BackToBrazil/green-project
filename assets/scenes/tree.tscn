@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bah0vldjb786p"]
 
-[ext_resource type="Texture2D" uid="uid://dmq78lbhqvq8w" path="res://assets/resources/sprites/enviroment/trees/Tree.png" id="1_qjq0o"]
+[ext_resource type="Texture2D" uid="uid://chi2sl5cmoccm" path="res://assets/Dark Fantasy Asset Pack/Objects, Props & Buildings/Tree1.png" id="1_qjq0o"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rphhr"]
 size = Vector2(18, 47)

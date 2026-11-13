@@ -69,7 +69,7 @@ public partial class Controller : Node
         if(_direction != Vector2.Zero)
             _lastDirection = _direction;
 
-        if(_currentVelocity > Vector2.Zero)
+        if(_currentVelocity.Length() > 0f)
             _movementState = MovementState.WALKING;
         else
             _movementState = MovementState.IDLE;
