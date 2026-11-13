@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using System;
 namespace GreenProject.Interactable;
 
@@ -9,6 +10,8 @@ public partial class Sign : Node2D, Interactable
 
     [Export]
     public string Text {  get; private set; }
+    [Export]
+    public Array<string> Lines { get; private set; }
 
     public override void _Ready()
     {

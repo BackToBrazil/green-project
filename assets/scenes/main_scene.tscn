@@ -979,6 +979,7 @@ position = Vector2(858, 578)
 
 [node name="Sign" parent="GameLevel" unique_id=300503589 instance=ExtResource("3_u44wh")]
 position = Vector2(474, 394)
+Lines = Array[String](["Sign", "Konichiwa sakura totoro fanservice magical girl megane grave of the fireflies dub your name fanservice cowboy bebop. ", "Japanese sake lolicon sake chibi manga kawaii matcha ramen honorifics doujinshi magical girl okonomiyaki seinan.", "Anime green tea onigiri moe josei moe cherry blossom ghost in the shell honorifics megane watashi konichiwa chibi dango seinan."])
 
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)

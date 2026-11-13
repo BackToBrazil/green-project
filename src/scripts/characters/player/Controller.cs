@@ -81,8 +81,7 @@ public partial class Controller : Node
             return;
         if (@event.IsActionPressed("interact"))
         {
-            //GD.Print("INTERACT");
-            _interactionBox.TryInteract();
+            _ = _interactionBox.TryInteract();
         }
     }
 
