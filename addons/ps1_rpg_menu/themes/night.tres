@@ -209,7 +209,7 @@ texture_margin_bottom = 4.0
 
 [resource]
 default_font = ExtResource("font")
-default_font_size = 10
+default_font_size = 12
 Accent/base_type = &"Label"
 Accent/colors/font_color = Color(0.69, 0.816, 1, 1)
 Accent/colors/font_shadow_color = Color(0.031, 0.024, 0.071, 1)

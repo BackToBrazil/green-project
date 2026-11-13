@@ -8,6 +8,8 @@
 [ext_resource type="Theme" uid="uid://bt86sk4o28lff" path="res://addons/ps1_rpg_menu/themes/night.tres" id="5_vo808"]
 [ext_resource type="Script" uid="uid://csoflkfolg1r7" path="res://src/scripts/ui/UserInterface.cs" id="7_0ft0v"]
 [ext_resource type="Script" uid="uid://buadrc8oinyjx" path="res://addons/ps1_rpg_menu/menu/dialogue_box.gd" id="7_4v045"]
+[ext_resource type="Script" uid="uid://bovcaf6jpj5ci" path="res://addons/ps1_rpg_menu/menu/rpg_window.gd" id="9_702vk"]
+[ext_resource type="Script" uid="uid://bwvke2vhk8i26" path="res://src/scripts/ui/choice_menu_list.gd" id="10_yecn6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0ft0v"]
 texture = ExtResource("1_4v045")
@@ -981,6 +983,10 @@ position = Vector2(858, 578)
 position = Vector2(474, 394)
 Lines = Array[String](["Sign", "Konichiwa sakura totoro fanservice magical girl megane grave of the fireflies dub your name fanservice cowboy bebop. ", "Japanese sake lolicon sake chibi manga kawaii matcha ramen honorifics doujinshi magical girl okonomiyaki seinan.", "Anime green tea onigiri moe josei moe cherry blossom ghost in the shell honorifics megane watashi konichiwa chibi dango seinan."])
 
+[node name="Sign2" parent="GameLevel" unique_id=1029940147 instance=ExtResource("3_u44wh")]
+position = Vector2(407, 448)
+Lines = Array[String](["Sign-Chan", "Sakura miyazaki honorifics seinan hai lolicon matcha nekomimi your name dango megane ramen.", "Sakura erogi seinan doujinshi josei megane ova japan magical girl ultra man ova cowboy bebop ramen matcha lolicon.", "Chibi ultra man onigiri dango takoyaki inuyasha sake lolicon onigiri magical girl mangaka inuyasha okonomiyaki baka."])
+
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)
 
@@ -1012,3 +1018,23 @@ offset_bottom = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 script = ExtResource("7_4v045")
+
+[node name="ChoiceMenu" type="PanelContainer" parent="CanvasLayer/UI" unique_id=1244333679]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -135.0
+offset_top = -75.0
+offset_right = 135.0
+offset_bottom = -15.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("9_702vk")
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer/UI/ChoiceMenu" unique_id=1709909110]
+layout_mode = 2
+script = ExtResource("10_yecn6")
