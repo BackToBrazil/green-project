@@ -6,15 +6,13 @@ namespace GreenProject.Interactable;
 public partial class Sign : Node2D, Interactable
 {
     [Export]
-    private Area2D _area;
-
-    [Export]
-    public string Text {  get; private set; }
-    [Export]
     public Array<string> Lines { get; private set; }
+
+    private Area2D _area;
 
     public override void _Ready()
     {
+        _area = GetNode<Area2D>("%Area2D");
         _area.AreaEntered += OnAreaEntered;
     }
 
