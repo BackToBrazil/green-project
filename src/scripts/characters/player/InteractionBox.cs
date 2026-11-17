@@ -25,7 +25,6 @@ public partial class InteractionBox : Area2D
 
     public override void _PhysicsProcess(double delta)
     {
-        //_direction = _characterBody.Velocity.Normalized();
         _direction = Input.GetVector("left", "right", "up", "down");
         if (_direction != Vector2.Zero)
         {
@@ -45,10 +44,8 @@ public partial class InteractionBox : Area2D
             _isEnabled = true;
             _timer.Start(0.1f);
             _collisionShape.SetDeferred("disabled", false);
-            GD.Print("ENADLED");
             await ToSignal(_timer, Timer.SignalName.Timeout);
             _collisionShape.SetDeferred("disabled", true);
-            GD.Print("DISABLED");
             _isEnabled = false;
         }
         return;
