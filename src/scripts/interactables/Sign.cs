@@ -21,9 +21,16 @@ public partial class Sign : Node2D, Interactable
         var lines = ResourceLoader.Load<Json>(Lines);
 
         var data_received = (Dictionary)lines.Data;
-        GD.Print(data_received);
-        _lines = (Array<string>)data_received["lines"];
-        _name = (string)data_received["name"];
+
+        if(!data_received.ContainsKey("lines"))
+            GD.PrintErr(string.Format("Could not read {0}'s lines, check for formatting error.", Name));
+        else
+            _lines = (Array<string>)data_received["lines"];
+
+        if (!data_received.ContainsKey("name"))
+            GD.PrintErr(string.Format("Could not read {0}'s name, check for formatting error.", Name));
+        else
+            _name = (string)data_received["name"];
     }
 
     private void OnAreaEntered(Area2D area)
@@ -33,8 +40,11 @@ public partial class Sign : Node2D, Interactable
 
     public async Task Interact()
     {
-        if (_lines == null)
+        if (_lines == null || _lines.Count <= 0)
+        {
+            GD.PrintErr(string.Format("{0}'s lines file '{1}' is null or zero.", Name, Lines));
             return;
+        }
 
         bool hasContinuation = true;
         for (int i = 0; i < _lines.Count; i++)

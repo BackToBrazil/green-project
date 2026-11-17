@@ -931,7 +931,7 @@ position = Vector2(858, 578)
 
 [node name="Sign" parent="GameLevel" unique_id=300503589 instance=ExtResource("3_u44wh")]
 position = Vector2(474, 394)
-Lines = "res://assets/resources/dialog_lines/dialog_template.json"
+Lines = "res://assets/resources/dialog_lines/sign.json"
 
 [node name="Sign2" parent="GameLevel" unique_id=1029940147 instance=ExtResource("3_u44wh")]
 position = Vector2(407, 448)
