@@ -6,12 +6,8 @@ namespace GreenProject.Interactable;
 
 public partial class Sign : Node2D, Interactable
 {
-    [Export]
-    public Json LinesJSON { get; private set; }
-
-    
     [Export(PropertyHint.File, "*.json")]
-    public string Test {  get; private set; }
+    public string Lines {  get; private set; }
 
     private Area2D _area;
     private Array<string> _lines;
@@ -22,7 +18,7 @@ public partial class Sign : Node2D, Interactable
         _area = GetNode<Area2D>("%Area2D");
         _area.AreaEntered += OnAreaEntered;
         
-        var lines = ResourceLoader.Load<Json>(Test);
+        var lines = ResourceLoader.Load<Json>(Lines);
 
         var data_received = (Dictionary)lines.Data;
         GD.Print(data_received);

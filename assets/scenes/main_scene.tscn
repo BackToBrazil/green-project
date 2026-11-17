@@ -10,7 +10,6 @@
 [ext_resource type="Theme" uid="uid://bt86sk4o28lff" path="res://addons/ps1_rpg_menu/themes/night.tres" id="5_vo808"]
 [ext_resource type="Script" uid="uid://csoflkfolg1r7" path="res://src/scripts/ui/UserInterface.cs" id="7_0ft0v"]
 [ext_resource type="Script" uid="uid://buadrc8oinyjx" path="res://addons/ps1_rpg_menu/menu/dialogue_box.gd" id="7_4v045"]
-[ext_resource type="JSON" uid="uid://6qo1gqmlth76" path="res://assets/resources/dialog_lines/new_json.tres" id="7_tk8gd"]
 [ext_resource type="Script" uid="uid://bovcaf6jpj5ci" path="res://addons/ps1_rpg_menu/menu/rpg_window.gd" id="9_702vk"]
 [ext_resource type="Script" uid="uid://bwvke2vhk8i26" path="res://src/scripts/ui/choice_menu_list.gd" id="10_yecn6"]
 
@@ -932,12 +931,11 @@ position = Vector2(858, 578)
 
 [node name="Sign" parent="GameLevel" unique_id=300503589 instance=ExtResource("3_u44wh")]
 position = Vector2(474, 394)
-LinesJSON = ExtResource("7_tk8gd")
-Test = "res://assets/resources/dialog_lines/sign.json"
+Lines = "res://assets/resources/dialog_lines/dialog_template.json"
 
 [node name="Sign2" parent="GameLevel" unique_id=1029940147 instance=ExtResource("3_u44wh")]
 position = Vector2(407, 448)
-Test = "res://assets/resources/dialog_lines/sign.json"
+Lines = "res://assets/resources/dialog_lines/dialog_template.json"
 
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)
