@@ -1,6 +1,7 @@
 using Godot;
 using Godot.Collections;
 using System;
+using System.Threading.Tasks;
 namespace GreenProject.Interactable;
 
 public partial class Sign : Node2D, Interactable
@@ -18,11 +19,18 @@ public partial class Sign : Node2D, Interactable
 
     private void OnAreaEntered(Area2D area)
     {
-        Interact();
+        _ = Interact();
     }
 
-    public void Interact()
+    public async Task Interact()
     {
-        EventsManager.Instance.EmitSignal(EventsManager.SignalName.InteractionStarted, this);
+        bool hasContinuation = true;
+        for (int i = 1; i < Lines.Count; i++)
+        {
+            if(i+1>=Lines.Count)
+                hasContinuation = false;
+            EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogStarted, Lines[i], Lines[0], hasContinuation);
+            await ToSignal(EventsManager.Instance, EventsManager.SignalName.DialogFinished);
+        }
     }
 }

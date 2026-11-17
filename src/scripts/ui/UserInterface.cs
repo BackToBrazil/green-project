@@ -8,23 +8,28 @@ public partial class UserInterface : Control
     [Export]
     public PanelContainer DialogBox {  get; private set; }
 
+    private bool _isDialogOpen = false;
     public override void _Ready()
     {
-        EventsManager.Instance.InteractionStarted += OnInteraction;
+        EventsManager.Instance.DialogStarted += OnDialogStart;
     }
 
-    private async void OnInteraction(Node2D origin)
+    private async void OnDialogStart(string line, string name, bool hasContinuation)
     {
-        Array<string> lines = (Array<string>)origin.Get("Lines");
-        if (lines.Count == 0)
-            return;
-        DialogBox.Call("pop_open");
-        for (int i = 1; i < lines.Count; i++)
+        if (!_isDialogOpen)
         {
-            DialogBox.Call("say", lines[i], lines[0]);
-            await ToSignal(DialogBox, "advanced");
+            DialogBox.Call("pop_open");
+            _isDialogOpen = true;
         }
-        EventsManager.Instance.EmitSignal(EventsManager.SignalName.InteractionFinished, origin);
-        DialogBox.Call("pop_close");
+
+        DialogBox.Call("say", line, name);
+        await ToSignal(DialogBox, "advanced");
+        EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogFinished);
+
+        if (!hasContinuation)
+        {
+            DialogBox.Call("pop_close");
+            _isDialogOpen = false;
+        }
     }
 }

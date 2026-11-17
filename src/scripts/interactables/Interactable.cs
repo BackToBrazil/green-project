@@ -1,8 +1,9 @@
 using Godot;
 using System;
+using System.Threading.Tasks;
 namespace GreenProject.Interactable;
 
 public interface Interactable
 {
-    public void Interact();
+    public Task Interact();
 }

@@ -5,9 +5,9 @@ namespace GreenProject;
 public partial class EventsManager : Node
 {
     [Signal]
-    public delegate void InteractionStartedEventHandler(Node2D origin);
+    public delegate void DialogStartedEventHandler(string line, string name = "", bool hasContinuation = false);
     [Signal]
-    public delegate void InteractionFinishedEventHandler(Node2D origin);
+    public delegate void DialogFinishedEventHandler();
 
     public bool IsDialogOpen = false;
 

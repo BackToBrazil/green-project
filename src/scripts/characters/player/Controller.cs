@@ -35,8 +35,8 @@ public partial class Controller : Node
 
     public override void _Ready()
     {
-        EventsManager.Instance.InteractionStarted += (origin) => { _isDialogOpen = true; };
-        EventsManager.Instance.InteractionFinished += (origin) => { _isDialogOpen = false; };
+        EventsManager.Instance.DialogStarted += (l, n, b) => { _isDialogOpen = true; };
+        EventsManager.Instance.DialogFinished += () => { _isDialogOpen = false; };
     }
 
     public override void _Process(double delta)
