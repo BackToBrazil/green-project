@@ -13,7 +13,7 @@ config_version=5
 config/name="green-project"
 run/main_scene="uid://c3jv2cudmrdop"
 config/features=PackedStringArray("4.7", "C#", "Forward Plus")
-config/icon="res://assets/resources/sprites/icon.svg"
+config/icon="res://assets/characters/icon.svg"
 
 [autoload]
 
@@ -23,8 +23,8 @@ EventsManager="*uid://b2ofmhjxpwt4x"
 
 window/size/viewport_width=960
 window/size/viewport_height=540
-window/size/window_width_override=1920
-window/size/window_height_override=1080
+window/size/window_width_override=1280
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 window/stretch/scale_mode="integer"
@@ -37,9 +37,13 @@ project/assembly_name="green-project"
 
 folder_colors={
 "res://addons/": "purple",
-"res://assets/": "red",
-"res://src/": "green",
-"res://src/scripts/battle_system/": "teal"
+"res://assets/": "pink",
+"res://assets/autoloads/": "blue",
+"res://assets/characters/": "red",
+"res://assets/dialog/": "yellow",
+"res://assets/gui/": "teal",
+"res://assets/world/": "orange",
+"res://dark_fantasy_asset_pack/": "green"
 }
 
 [input]
