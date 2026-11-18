@@ -7,29 +7,26 @@ public partial class UserInterface : Control
 {
     [Export]
     public PanelContainer DialogBox {  get; private set; }
-
-    private bool _isDialogOpen = false;
     public override void _Ready()
     {
-        EventsManager.Instance.DialogStarted += OnDialogStart;
+        EventsManager.Instance.LineSaid += OnSayLine;
+
+        EventsManager.Instance.DialogFinished += () => { 
+            DialogBox.Call("pop_close");
+            EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogBoxClosed);
+        };
     }
 
-    private async void OnDialogStart(string line, string name, bool hasContinuation)
+    private async void OnSayLine(string line, string name)
     {
-        if (!_isDialogOpen)
+        if (!GameState.Instance.IsDialogBoxOpen)
         {
+            EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogBoxOpened);
             DialogBox.Call("pop_open");
-            _isDialogOpen = true;
         }
 
         DialogBox.Call("say", line, name);
         await ToSignal(DialogBox, "advanced");
-        EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogFinished);
-
-        if (!hasContinuation)
-        {
-            DialogBox.Call("pop_close");
-            _isDialogOpen = false;
-        }
+        EventsManager.Instance.EmitSignal(EventsManager.SignalName.DialogAdvanced);
     }
 }

@@ -18,6 +18,7 @@ config/icon="res://assets/characters/icon.svg"
 [autoload]
 
 EventsManager="*uid://b2ofmhjxpwt4x"
+GameState="*uid://b00kywto43diy"
 
 [display]
 

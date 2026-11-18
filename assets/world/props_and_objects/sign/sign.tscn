@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c7kk3aqmfbmxu"]
 
 [ext_resource type="Texture2D" uid="uid://dgpq3ao5r1ran" path="res://assets/world/props_and_objects/sign/Sign.png" id="1_iooc7"]
-[ext_resource type="Script" uid="uid://dylkubm5h3qx" path="res://assets/world/props_and_objects/sign/Sign.cs" id="1_k6uts"]
+[ext_resource type="Script" uid="uid://b6puoniq7knen" path="res://assets/dialog/SimpleDialog.cs" id="2_5p3w4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rphhr"]
 size = Vector2(12, 12)
@@ -12,7 +12,6 @@ radius = 7.0
 [node name="Sign" type="StaticBody2D" unique_id=300503589]
 collision_layer = 3
 collision_mask = 0
-script = ExtResource("1_k6uts")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1427636381]
 texture = ExtResource("1_iooc7")
@@ -29,3 +28,7 @@ monitorable = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=467822729]
 shape = SubResource("CircleShape2D_rphhr")
+
+[node name="SimpleDialog" type="Node" parent="." unique_id=1906881039]
+script = ExtResource("2_5p3w4")
+metadata/_custom_type_script = "uid://b6puoniq7knen"
