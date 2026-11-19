@@ -935,6 +935,12 @@ position = Vector2(338, 285)
 [node name="SimpleDialog" parent="GameLevel/Sign" index="3" unique_id=1906881039]
 Dialog = "res://assets/dialog/main_scene/sign_1/sign.json"
 
+[node name="Sign2" parent="GameLevel" unique_id=484864605 instance=ExtResource("3_u44wh")]
+position = Vector2(460, 384)
+
+[node name="SimpleDialog" parent="GameLevel/Sign2" index="3" unique_id=1906881039]
+Dialog = "res://assets/dialog/main_scene/sign_2/sign_2.json"
+
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)
 
@@ -988,3 +994,4 @@ layout_mode = 2
 script = ExtResource("10_yecn6")
 
 [editable path="GameLevel/Sign"]
+[editable path="GameLevel/Sign2"]
