@@ -11,8 +11,8 @@ public partial class SimpleDialog : IDialog
     [Export(PropertyHint.File, "*.json")]
     public string Dialog { get; private set; }
 
-    private Array<string> _lines;
-    private string _name;
+    protected Array<string> _lines;
+    protected string _name;
 
     public override void _Ready()
     {

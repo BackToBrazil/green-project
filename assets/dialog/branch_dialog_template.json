@@ -1,0 +1,24 @@
+{
+	"name": "BranchDialogTemplate",
+	"choices": [
+		"Megane takoyaki inuyasha oneesan",
+		"Ecchi ramen oneesan nekomimi",
+		"Moe okonomiyaki desu sake"
+	],
+	"lines": [
+		"Dango cosplay manga takoyaki mecha panties senpai seinan hikikomori desu iie cherry blossom loli grave of the fireflies anime.",
+		"Iie chibi loli dub honorifics loli seinan erogi cosplay nekomimi ghost in the shell seinan baka totoro ecchi.",
+		"Uke oniisan tea honorifics mecha weeaboo nekomimi dub baka sake mothra. Lolicon hai manga seme tea sakura your name loli pokemon otaku loli manga."
+	],
+	"branches": [
+		[
+			"Iie chibi loli dub honorifics loli seinan erogi cosplay nekomimi ghost in the shell seinan baka totoro ecchi."
+		],
+		[
+			"Dango cosplay manga takoyaki mecha panties senpai seinan hikikomori desu iie cherry blossom loli grave of the fireflies anime."
+		],
+		[
+			"Hentai sakura cherry blossom doujinshi sakura cowboy bebop otaku konichiwa okonomiyaki godzilla dandere sushi."
+		]
+	]
+}

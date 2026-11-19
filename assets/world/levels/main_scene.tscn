@@ -10,6 +10,7 @@
 [ext_resource type="Theme" uid="uid://bt86sk4o28lff" path="res://addons/ps1_rpg_menu/themes/night.tres" id="5_vo808"]
 [ext_resource type="Script" uid="uid://csoflkfolg1r7" path="res://assets/gui/UserInterface.cs" id="7_0ft0v"]
 [ext_resource type="Script" uid="uid://buadrc8oinyjx" path="res://addons/ps1_rpg_menu/menu/dialogue_box.gd" id="7_4v045"]
+[ext_resource type="PackedScene" uid="uid://cc81300ysihjr" path="res://assets/world/props_and_objects/sign/branching_sign.tscn" id="7_xygtu"]
 [ext_resource type="Script" uid="uid://bovcaf6jpj5ci" path="res://addons/ps1_rpg_menu/menu/rpg_window.gd" id="9_702vk"]
 [ext_resource type="Script" uid="uid://bwvke2vhk8i26" path="res://assets/gui/choice_menu_list.gd" id="10_yecn6"]
 
@@ -941,12 +942,18 @@ position = Vector2(460, 384)
 [node name="SimpleDialog" parent="GameLevel/Sign2" index="3" unique_id=1906881039]
 Dialog = "res://assets/dialog/main_scene/sign_2/sign_2.json"
 
+[node name="Sign3" parent="GameLevel" unique_id=2055361435 instance=ExtResource("7_xygtu")]
+position = Vector2(127, 326)
+
+[node name="BranchingDialog" parent="GameLevel/Sign3" index="3" unique_id=441784657]
+Dialogs = "res://assets/dialog/branch_dialog_template.json"
+
 [node name="Player" parent="." unique_id=1810374751 instance=ExtResource("1_slo4m")]
 position = Vector2(510, 225)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1575569168]
 
-[node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623 node_paths=PackedStringArray("DialogBox")]
+[node name="UI" type="Control" parent="CanvasLayer" unique_id=221310623 node_paths=PackedStringArray("DialogBox", "ChoiceMenu", "ChoiceGrid")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -956,6 +963,8 @@ grow_vertical = 2
 theme = ExtResource("5_vo808")
 script = ExtResource("7_0ft0v")
 DialogBox = NodePath("DialogBox")
+ChoiceMenu = NodePath("ChoiceMenu")
+ChoiceGrid = NodePath("ChoiceMenu/GridContainer")
 
 [node name="DialogBox" type="PanelContainer" parent="CanvasLayer/UI" unique_id=683902120]
 visible = false
@@ -974,6 +983,7 @@ grow_vertical = 0
 script = ExtResource("7_4v045")
 
 [node name="ChoiceMenu" type="PanelContainer" parent="CanvasLayer/UI" unique_id=1244333679]
+unique_name_in_owner = true
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -995,3 +1005,4 @@ script = ExtResource("10_yecn6")
 
 [editable path="GameLevel/Sign"]
 [editable path="GameLevel/Sign2"]
+[editable path="GameLevel/Sign3"]

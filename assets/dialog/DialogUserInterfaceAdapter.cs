@@ -1,4 +1,5 @@
 using Godot;
+using Godot.Collections;
 using GreenProject.UI;
 using System;
 using System.Threading.Tasks;
@@ -36,5 +37,23 @@ public partial class DialogUserInterfaceAdapter : IDialogService
         _ui.DialogBox.Call("say", line, name);
         await ToSignal(_ui.DialogBox, "advanced");
         return;
+    }
+
+    public override async Task<int> ShowChoices(Array<string> choices)
+    {
+        foreach (string choice in choices)
+        {
+            _ui.ChoiceGrid.Call("set_items", choices);
+        }
+        
+        _ui.ChoiceMenu.CallDeferred("pop_open");
+        _ui.DialogBox.CallDeferred("pop_close");
+
+        var result = await ToSignal(_ui.ChoiceGrid, "chosen");
+
+        _ui.ChoiceMenu.CallDeferred("pop_close");
+        _ui.DialogBox.CallDeferred("pop_open");
+
+        return (int)result[0];
     }
 }
